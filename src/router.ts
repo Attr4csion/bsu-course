@@ -1,6 +1,7 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
 
-import MainPage from '@/pages/MainPage.vue'
+import MainPage from '@/pages/MainPage.vue';
+import SurveyPage from './pages/SurveyPage.vue';
 
 const routes = [
   {
@@ -9,12 +10,21 @@ const routes = [
     meta: {
       title: 'TestPage',
     },
+    children: [
+      {
+        path: '/',
+        component: SurveyPage,
+        meta: {
+          title: 'SurveyPage',
+        },
+      },
+    ],
   },
-]
+];
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
-})
+});
 
-export default router
+export default router;

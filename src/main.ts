@@ -5,6 +5,7 @@ import ElementPlus from "element-plus";
 import ru from "element-plus/es/locale/lang/ru";
 import "element-plus/dist/index.css";
 import "./assets/index.postcss";
+import "./index.css"
 import router from "./router";
 
 const app = createApp(App);

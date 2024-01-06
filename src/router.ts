@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 import MainPage from '@/pages/MainPage.vue';
-import SurveyPage from './pages/SurveyPage.vue';
+import SurveyPage from '@/pages/SurveyPage.vue';
+import SurveyDetail from '@/components/TheSurvey/SurveyDetail.vue';
 
 const routes = [
   {
@@ -19,6 +20,13 @@ const routes = [
         },
       },
     ],
+  },
+  {
+    path: '/survey/:id',
+    component: SurveyDetail,
+    meta: {
+      title: 'SurveyDetail',
+    },
   },
 ];
 

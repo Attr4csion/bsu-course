@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "name": "Reading / Чтение",
+    "image":"/img/reading.jpg",
+    "value": {
+      "answers": [
+        {
+          "id": "1",
+          "value": "A lake on the territory of the USA"
+        },
+        {
+          "id": "2",
+          "value": "A nice place to go fishing"
+        },
+        {
+          "id": "3",
+          "value": "One of the biggest lakes in the world"
+        },
+        {
+          "id": "4",
+          "value": "A fresh water animal"
+        },
+        {
+          "id": "5",
+          "value": "A lake with an island in the middle"
+        },
+        {
+          "id": "6",
+          "value": "Swimming records"
+        }
+      ],
+      "questions": [
+        {
+          "id": "1",
+          "name": "A",
+          "value": "The Great Lakes are a group of lakes in the mid-east area of North America bordering Canada. Lake Superior is not only the largest of the Great Lakes but also the largest freshwater lake in the world by surface area. It contains more water than the other four lakes combined. So much water, in fact, that it could cover the whole of North and South America with one foot of water."
+        },
+        {
+          "id": "2",
+          "name": "B",
+          "value": "Lake Michigan is the only one of the five lakes to be completely located inside the United States, the other four lakes are shared by the U.S. and Canada. Technically, it is the same lake as Lake Huron as they are linked by the Strait of Mackinac. The word “Michigan” comes from the native American word michi-gami, which means “great water”."
+        },
+        {
+          "id": "3",
+          "name": "C",
+          "value": "Lake Huron is the eastern part of Lake Michigan-Huron. It was actually the first of the Great Lakes to be discovered by European explorers. One of the most interesting features of the lake is Manitoulin Island, which is the largest freshwater island in the world."
+        },
+        {
+          "id": "4",
+          "name": "D",
+          "value": "Lake Erie is the shallowest of the five lakes, its average depth is only 19 meters. It is the largest freshwater fishery in the world, boosting the economy by over 1 billion dollars every year. People from all over the world come to Lake Erie to fish."
+        },
+        {
+          "id": "5",
+          "name": "E",
+          "value": "Lake Ontario is the last on the Great Lake chain and serves as the outlet to the Atlantic Ocean. Throughout its history there have been 50 people who have swum across the lake. The very first person to accomplish this was 16-year-old Marilyn Bell in 1954."
+        }
+      ]
+    }
+  }
+]

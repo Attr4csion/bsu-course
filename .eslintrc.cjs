@@ -1,5 +1,5 @@
 /* eslint-env node */
-require('@rushstack/eslint-patch/modern-module-resolution')
+require('@rushstack/eslint-patch/modern-module-resolution');
 
 module.exports = {
   root: true,
@@ -20,6 +20,7 @@ module.exports = {
     'comma-dangle': ['error', 'only-multiline'],
     'id-length': [2, { exceptions: ['i', 'j', '_'] }],
     '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '_' }],
+    'vue/multi-word-component-names': 'off',
   },
   globals: {
     defineProps: 'readonly',
@@ -27,4 +28,4 @@ module.exports = {
     defineExpose: 'readonly',
     withDefaults: 'readonly',
   },
-}
+};

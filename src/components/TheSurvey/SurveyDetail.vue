@@ -20,6 +20,12 @@
         </p>
       </div>
     </div>
+    <input
+      v-if="(currentQ?.type === 'grammar')"
+      v-model="answerInput"
+      type="text"
+      placeholder="Введите ответы"
+    />
   </el-card>
 </template>
 
@@ -28,7 +34,7 @@ import { useRoute } from 'vue-router';
 import questions from '@/assets/questions/questions.json';
 
 const currentQ = ref();
-
+const answerInput = ref();
 onMounted(() => {
   const { params } = useRoute();
   currentQ.value = questions.find((el) => el.id === params.id);

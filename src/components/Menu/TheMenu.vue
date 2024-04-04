@@ -5,25 +5,21 @@
     @open="handleOpen"
     @close="handleClose"
   >
-    <el-menu-item>
-      <el-icon><setting /></el-icon>
-      <template #title>Navigator Four</template>
+    <el-menu-item @click="$router.push('/')">
+      <el-icon><House /></el-icon>
+      <template #title>Главная</template>
     </el-menu-item>
     <el-menu-item>
-      <el-icon><setting /></el-icon>
-      <template #title>Navigator Four</template>
+      <el-icon><UserFilled /></el-icon>
+      <template #title>Личный кабинет</template>
     </el-menu-item>
-    <el-menu-item>
-      <el-icon><setting /></el-icon>
-      <template #title>Navigator Four</template>
+    <el-menu-item >
+      <el-icon><Histogram /></el-icon>
+      <template #title>Аналитика</template>
     </el-menu-item>
-    <el-menu-item>
+    <el-menu-item >
       <el-icon><setting /></el-icon>
-      <template #title>Navigator Four</template>
-    </el-menu-item>
-    <el-menu-item>
-      <el-icon><setting /></el-icon>
-      <template #title>Navigator Four</template>
+      <template #title>Настройки</template>
     </el-menu-item>
   </el-menu>
 </template>

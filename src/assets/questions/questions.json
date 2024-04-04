@@ -102,5 +102,122 @@
         }
       ]
     }
+  },
+  {
+    "id": "3",
+    "type": "listening",
+    "name": "Listening / Аудирование",
+    "image": "/img/audio.png",
+    "description": "Вы услышите диалог. Запишите в поле ответа цифру 1,2 или 3, соответствующую выбранному вами варианту ответа. Вы услышите запись дважды.",
+    "value": {
+      "answers": [],
+      "questions": [
+        {
+          "id": "A",
+          "value": " Yesterday was ________",
+          "answers": [
+            {
+              "id": "1",
+              "name": "A",
+              "value": "May 31"
+            },
+            {
+              "id": "2",
+              "name": "A",
+              "value": "June 1"
+            },
+            {
+              "id": "3",
+              "name": "A",
+              "value": "June 2"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "value": "Tomorrow Claire and Martin will go ________",
+          "answers": [
+            {
+              "id": "1",
+              "name": "B",
+              "value": "shopping"
+            },
+            {
+              "id": "2",
+              "name": "B",
+              "value": "to a party"
+            },
+            {
+              "id": "3",
+              "name": "B",
+              "value": "to work"
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "value": "Aunt Dorothy likes ________",
+          "answers": [
+            {
+              "id": "1",
+              "name": "C",
+              "value": "roses"
+            },
+            {
+              "id": "2",
+              "name": "C",
+              "value": "tulips"
+            },
+            {
+              "id": "3",
+              "name": "C",
+              "value": "lilies "
+            }
+          ]
+        },
+        {
+          "id": "D",
+          "value": "Claire and Martin will give Aunt Dorothy a _______",
+          "answers": [
+            {
+              "id": "1",
+              "name": "D",
+              "value": "scarf"
+            },
+            {
+              "id": "2",
+              "name": "D",
+              "value": "bag"
+            },
+            {
+              "id": "3",
+              "name": "D",
+              "value": "bag"
+            }
+          ]
+        },
+        {
+          "id": "E",
+          "value": "It is now ________",
+          "answers": [
+            {
+              "id": "1",
+              "name": "E",
+              "value": "8:15"
+            },
+            {
+              "id": "2",
+              "name": "E",
+              "value": "9:15"
+            },
+            {
+              "id": "3",
+              "name": "E",
+              "value": "8:45"
+            }
+          ]
+        }
+      ]
+    }
   }
 ]

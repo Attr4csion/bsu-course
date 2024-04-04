@@ -1,6 +1,6 @@
 <template>
   <div class="flex">
-    <h1 class="p-5 font-bold">Подготовка к ВПР по английскому языку</h1>
+    <h1 class="p-5 font-bold">Система тестирования по английскому языку</h1>
   </div>
 </template>
 

@@ -1,89 +1,56 @@
 <template>
   <el-card class="flex flex-col w-[80%] h-[80%] m-auto">
     <div class="flex justify-between">
-      <h1>{{ currentQ?.name }}</h1>
+      <h1>{{ exercise?.title }}</h1>
       <el-button
         type="success"
         plain
-        @click="$router.push('/')"
+        @click="
+          () => {
+            handleSaveExercises();
+            $router.push('/');
+          }
+        "
       >
         Сохранить
       </el-button>
     </div>
-    <h2>{{ currentQ?.description }}</h2>
-    <div
-      v-if="currentQ?.type === 'grammar' || currentQ?.type === 'reading'"
-      class="flex gap-4"
-    >
-      <div class="flex flex-col w-[400px]">
-        <p
-          v-for="answer in currentQ?.value.answers"
-          :key="answer.id"
-        >
-          {{ answer.id }} : {{ answer.value }}
-        </p>
-      </div>
-      <el-scrollbar
-        :height="500"
-        always
-        style="padding-right: 20px"
+    <h2>{{ exercise?.description }}</h2>
+    <div class="flex flex-col">
+      <div
+        v-for="(q, index) in exercise?.questions"
+        :key="q.id"
       >
-        <div
-          v-for="question in currentQ?.value.questions"
-          :key="question.id"
-          class="flex gap-5"
-        >
-          <p class="max-w-[800px]">{{ question.id }} : {{ question.value }}</p>
-          <el-input
-            v-if="currentQ?.type === 'reading'"
-            style="width: 100px; height: 40px"
-            type="text"
-            placeholder="Ответ"
-          />
-        </div>
-      </el-scrollbar>
-    </div>
+        <!-- SINGLE CHOICE -->
 
-    <el-input
-      v-if="currentQ?.type === 'grammar'"
-      v-model="answerInput"
-      type="text"
-      placeholder="Введите ответы"
-      style="width: 300px; height: 50px"
-    />
-
-    <div
-      v-if="currentQ?.type === 'listening'"
-      class="flex w-[70%] gap-[40px]"
-    >
-      <audio
-        src="/audio.mp3"
-        controls
-        type="audio/mp3"
-      ></audio>
-      <div class="flex flex-col gap-4">
-        <div
-          v-for="question in currentQ?.value.questions"
-          :key="question.id"
-          class="flex flex-col gap-2"
-        >
-          <div>{{ question.id }} : {{ question.value }}</div>
-          <div class="flex justify-between">
-            <div
-              v-for="answer in question.answers"
-              :key="answer.id"
+        <div v-if="q.category === 'SINGLE_CHOICE'">
+          <p>{{ q?.text }}</p>
+          <el-radio-group v-model="answers[index].selected_answer_ids[0]">
+            <el-radio
+              v-for="a in q.answers"
+              :key="a.id"
+              :value="a.id"
+              >{{ a.text }}</el-radio
             >
-              <p v-if="answer.name === question.id">
-                <span class="font-semibold"> {{ answer.id }}. </span>
-                <span>
-                  {{ answer.value }}
-                </span>
-              </p>
-            </div>
-          </div>
+          </el-radio-group>
+        </div>
+        <!-- MULTIPLE CHOICE -->
+        <div v-if="q.category === 'MULTIPLE_CHOICE'">
+          <p>{{ q?.text }}</p>
+          <el-checkbox-group v-model="answers[index].selected_answer_ids">
+            <el-checkbox
+              v-for="a in q.answers"
+              :key="a.id"
+              :value="a.id"
+              >{{ a.text }}</el-checkbox
+            >
+          </el-checkbox-group>
+        </div>
+        <!-- WRITE CHOICE -->
+        <div v-if="q.category === 'TEXT'">
+          <p>{{ q?.text }}</p>
           <el-input
-            type="text"
-            style="width: 200px; height: 30px"
+            v-model="answers[index].written_answer"
             placeholder="Введите ответ"
           ></el-input>
         </div>
@@ -93,14 +60,36 @@
 </template>
 
 <script setup lang="ts">
+import api from '@/axios.ts';
 import { useRoute } from 'vue-router';
-import questions from '@/assets/questions/questions.json';
+const exercise = ref();
+const router = useRoute();
 
-const currentQ = ref();
-const answerInput = ref();
+const answers = ref([] as any[]);
+
+const getExercises = async (id: string) => {
+  const { data } = await api.get(`backend/exercises/${id}/`);
+  exercise.value = data;
+  data?.questions.forEach((q) => {
+    answers.value.push({
+      question_id: q.id,
+      selected_answer_ids: [],
+      written_answer: '',
+    });
+  });
+};
+
+const handleSaveExercises = async () => {
+  await api.post(
+    `backend/user-exercises/${router.params.id as string}/submit/`,
+    {
+      answers: answers.value,
+    }
+  );
+};
+
 onMounted(() => {
-  const { params } = useRoute();
-  currentQ.value = questions.find((el) => el.id === params.id);
+  getExercises(router.params.id as string);
 });
 </script>
 

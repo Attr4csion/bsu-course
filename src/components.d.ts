@@ -7,22 +7,16 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    CSS3Logo: typeof import('./components/logos/CSS3Logo.vue')['default']
-    CSSFeatureVideoContainer: typeof import('./components/CSSFeatureVideoContainer.vue')['default']
-    GitHubLogo: typeof import('./components/logos/GitHubLogo.vue')['default']
-    HTML5Logo: typeof import('./components/logos/HTML5Logo.vue')['default']
-    JSLogo: typeof import('./components/logos/JSLogo.vue')['default']
-    MyStory: typeof import('./components/MyStory.vue')['default']
+    AssignCreating: typeof import('./components/AssignCreating.vue')['default']
+    ExercisesCreating: typeof import('./components/ExercisesCreating.vue')['default']
+    IndexPage: typeof import('./components/IndexPage.vue')['default']
+    LoginPage: typeof import('./components/LoginPage.vue')['default']
+    MainLayout: typeof import('./components/MainLayout.vue')['default']
+    QuestionsCreating: typeof import('./components/QuestionsCreating.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SkillsComponent: typeof import('./components/SkillsComponent.vue')['default']
-    Survey: typeof import('./components/Survey/index.vue')['default']
     SurveyDetail: typeof import('./components/TheSurvey/SurveyDetail.vue')['default']
     TheHeader: typeof import('./components/Header/TheHeader.vue')['default']
     TheMenu: typeof import('./components/Menu/TheMenu.vue')['default']
-    TheSurvey: typeof import('./components/TheSurvey/index.vue')['default']
-    TypeScriptLogo: typeof import('./components/logos/TypeScriptLogo.vue')['default']
-    UserCard: typeof import('./components/UserCard.vue')['default']
-    VueLogo: typeof import('./components/logos/VueLogo.vue')['default']
   }
 }

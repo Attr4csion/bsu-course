@@ -1,5 +1,5 @@
 <template>
-  <el-main style="--el-main-padding: 32px 160px; overflow: hidden">
+  <el-main>
     <router-view></router-view>
   </el-main>
 </template>
